@@ -28,9 +28,7 @@ nav > ul {
   padding: 10px;
 }
 nav > ul > li {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
 }
 nav > ul > li:nth-child(1):hover,
 li:nth-child(2):hover {
