@@ -1,11 +1,11 @@
-import express from "express";
+// import express from "express";
 
-const app = express();
+// const app = express();
 
-app.get("/", (req, res) => {
-  res.render("index.ejs");
-});
+// app.get("/", (req, res) => {
+//   res.render("index.ejs");
+// });
 
-app.listen(3000, () => {
-  console.log("Server working ✅");
-});
+// app.listen(3000, () => {
+//   console.log("Server working ✅");
+// });

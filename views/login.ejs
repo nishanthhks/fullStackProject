@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../public/login.css" />
+    <link rel="stylesheet" href="../public/login-registration.css" />
   </head>
   <body>
     <div class="container">
@@ -39,6 +39,19 @@
               src="../public/icons/crossed-eye.svg"
               alt=""
               width="20" />
+          </div>
+          <div class="checkBox-item">
+            <div class="checkBox-content">
+              <input type="checkbox" name="remember" id="remember" />
+              <label for="remember">Remember me</label>
+            </div>
+            <a href="#">Forget password?</a>
+          </div>
+          <button type="submit">Login now</button>
+          <div class="register-login-redirect">
+            <p>
+              Not a member? <a href="../views/registration.ejs">Signup now</a>
+            </p>
           </div>
         </form>
       </div>
