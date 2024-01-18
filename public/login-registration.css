@@ -8,7 +8,6 @@
 :root {
   --primary: #f8f9fa;
   --secondary: #ff8b17;
-
   --dark-moss-green: #606c38ff;
   --dark-green: #283618ff;
   --cornsilk: #fefae0ff;
@@ -37,8 +36,7 @@ body {
   padding: 25px;
   border-radius: 10px;
   background-color: var(--cornsilk);
-
-  /* box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 1); */
+  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 1);
 }
 .title {
   position: relative;
