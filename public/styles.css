@@ -133,6 +133,7 @@ header {
   .sidebar {
     display: initial;
     position: fixed;
+
     top: 78px;
     right: 5px;
     align-items: center;
