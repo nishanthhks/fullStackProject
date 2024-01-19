@@ -10,6 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
       rel="stylesheet" />
     <link rel="stylesheet" href="../public/styles.css" />
+    <link rel="stylesheet" href="../public/footer.css" />
   </head>
   <body>
     <header>
@@ -18,8 +19,10 @@
         <ul>
           <li class="about-us"><a href="#">About us</a></li>
           <li class="donate"><a href="#">Donate</a></li>
-          <li class="login"><a href="#">Login</a></li>
-          <li class="register"><a href="#">Register</a></li>
+          <li class="login"><a href="../views/login.ejs">Login</a></li>
+          <li class="register">
+            <a href="../views/registration.ejs">Register</a>
+          </li>
         </ul>
         <img class="menu" src="../public/icons/menu.svg" alt="" width="35" />
       </nav>
@@ -27,8 +30,10 @@
         <ul>
           <li class="about-us"><a href="#">About us</a></li>
           <li class="donate"><a href="#">Donate</a></li>
-          <li class="login"><a href="#">Login</a></li>
-          <li class="register"><a href="#">Register</a></li>
+          <li class="login"><a href="../views/login.ejs">Login</a></li>
+          <li class="register">
+            <a href="../views/registration.ejs">Register</a>
+          </li>
         </ul>
       </nav>
     </header>
@@ -58,7 +63,14 @@
               <button></button>
             </div>
           </div>
-          <div class="info-cards card-4"></div>
+
+          <div class="info-cards card-4">
+            <span></span>
+            <div class="description">
+              <p></p>
+              <button></button>
+            </div>
+          </div>
         </div>
         <div class="main-img"></div>
       </div>
@@ -68,12 +80,40 @@
     <img src="../public/icons/crossed-eye.svg" alt="" />
     <footer class="footer">
       <div class="footer-container">
-        <div class="footer-registration"></div>
-        <div class="footer-image"></div>
-        <div class="footer-logo"></div>
-        <div class="footer-info"></div>
-        <div class="footer-info"></div>
-        <div class="footer-info"></div>
+        <div class="footer-registration">
+          <div class="footer-heading">
+            <p>Lorem ipsum dolor sit amet.</p>
+            <h3>Lorem ipsum dolor sit.</h3>
+          </div>
+          <a href="#">Login</a>
+        </div>
+        <div class="footer-image">
+          <img src="../public/icons/eye.svg" alt="" width="150" />
+        </div>
+        <div class="footer-logo">
+          <img src="../public/icons/websiteLogo.png" alt="" width="120" />
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            Necessitatibus blanditiis <br />eligendi possimus magni eum quasi?
+          </p>
+        </div>
+        <div class="footer-info links">
+          <a href="#">About</a>
+          <a href="#">Jobs</a>
+          <a href="#">Docs</a>
+        </div>
+        <div class="footer-info">
+          <a href="#">Terms and Conditions</a>
+          <a href="#">Privacy policy</a>
+          <a href="#">cookie policy</a>
+        </div>
+        <div class="footer-info">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates
+            ipsum illum possimus id illo dolore quaerat et accusantium soluta
+            aspernatur.
+          </p>
+        </div>
       </div>
     </footer>
   </body>
