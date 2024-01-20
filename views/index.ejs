@@ -10,6 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
       rel="stylesheet" />
     <link rel="stylesheet" href="../public/styles.css" />
+    <link rel="stylesheet" href="../public/header.css" />
     <link rel="stylesheet" href="../public/footer.css" />
   </head>
   <body>
@@ -17,22 +18,33 @@
       <nav class="navbar">
         <img src="../public/icons/websiteLogo.png" alt="" width="120" />
         <ul>
-          <li class="about-us"><a href="#">About us</a></li>
+          <li class="about-us"><a href="#"> About us</a></li>
           <li class="donate"><a href="#">Donate</a></li>
-          <li class="login"><a href="../views/login.ejs">Login</a></li>
+          <li class="login"><a href="#">Login</a></li>
           <li class="register">
-            <a href="../views/registration.ejs">Register</a>
+            <a href="#">Register</a>
           </li>
         </ul>
-        <img class="menu" src="../public/icons/menu.svg" alt="" width="35" />
+        <img
+          class="menu hamburger see"
+          src="../public/icons/menu.svg"
+          alt=""
+          width="35"
+          onclick="toggleSidebar()" />
+        <img
+          class="menu cross"
+          src="../public/icons/cross.svg"
+          alt=""
+          width="35"
+          onclick="toggleSidebar()" />
       </nav>
-      <nav class="sidebar navbar">
+      <nav class="sidebar show">
         <ul>
-          <li class="about-us"><a href="#">About us</a></li>
-          <li class="donate"><a href="#">Donate</a></li>
-          <li class="login"><a href="../views/login.ejs">Login</a></li>
-          <li class="register">
-            <a href="../views/registration.ejs">Register</a>
+          <li class="side-about-us"><a href="#">About us</a></li>
+          <li class="side-donate"><a href="#">Donate</a></li>
+          <li class="side-login"><a href="#">Login</a></li>
+          <li class="side-register">
+            <a href="#">Register</a>
           </li>
         </ul>
       </nav>
@@ -75,9 +87,14 @@
         <div class="main-img"></div>
       </div>
     </section>
-    <img src="../public/icons/envelope.svg" alt="" />
-    <img src="../public/icons/crossed-eye.svg" alt="" />
-    <img src="../public/icons/crossed-eye.svg" alt="" />
+    <div style="display: flex; flex-direction: column">
+      <img src="../public/icons/envelope.svg" alt="" width="100" />
+      <img src="../public/icons/envelope.svg" alt="" width="100" />
+      <img src="../public/icons/envelope.svg" alt="" width="100" />
+      <img src="../public/icons/envelope.svg" alt="" width="100" />
+      <img src="../public/icons/envelope.svg" alt="" width="100" />
+    </div>
+
     <footer class="footer">
       <div class="footer-container">
         <div class="footer-registration">
@@ -92,29 +109,35 @@
         </div>
         <div class="footer-logo">
           <img src="../public/icons/websiteLogo.png" alt="" width="120" />
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-            Necessitatibus blanditiis <br />eligendi possimus magni eum quasi?
-          </p>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
         </div>
-        <div class="footer-info links">
+        <div class="footer-info-1 links">
           <a href="#">About</a>
           <a href="#">Jobs</a>
           <a href="#">Docs</a>
         </div>
-        <div class="footer-info">
+        <div class="footer-info-2 links">
           <a href="#">Terms and Conditions</a>
           <a href="#">Privacy policy</a>
           <a href="#">cookie policy</a>
         </div>
-        <div class="footer-info">
+        <div class="footer-info-3">
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates
-            ipsum illum possimus id illo dolore quaerat et accusantium soluta
-            aspernatur.
           </p>
         </div>
       </div>
     </footer>
+    <script>
+      function toggleSidebar() {
+        const sidebar = document.querySelector(".sidebar").style;
+        const hamburger = document.querySelector(".hamburger").style;
+        const cross = document.querySelector(".cross").style;
+
+        sidebar.display = sidebar.display === "none" ? "flex" : "none";
+        cross.display = cross.display === "none" ? "block" : "none";
+        hamburger.display = cross.display === "none" ? "block" : "none";
+      }
+    </script>
   </body>
 </html>
