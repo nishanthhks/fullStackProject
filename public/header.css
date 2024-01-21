@@ -86,7 +86,6 @@ header {
 .hamburger {
   display: none;
 }
-
 /* header sidebar*/
 .sidebar {
   position: fixed;
@@ -145,9 +144,9 @@ header {
   .register {
     display: none;
   }
-  .hamburger {
+  /* .hamburger {
     display: block;
-  }
+  } */
   /* .cross {
     display: none;
   } */

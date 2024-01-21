@@ -26,7 +26,7 @@
           </li>
         </ul>
         <img
-          class="menu hamburger see"
+          class="menu hamburger"
           src="../public/icons/menu.svg"
           alt=""
           width="35"
@@ -50,51 +50,17 @@
       </nav>
     </header>
     <section>
-      <div class="main-content">
-        <div class="cards">
-          <div class="info-cards card-1">
-            <span></span>
-            <div class="description">
-              <p></p>
-              <button></button>
-            </div>
-          </div>
-
-          <div class="info-cards card-2">
-            <span></span>
-            <div class="description">
-              <p></p>
-              <button></button>
-            </div>
-          </div>
-
-          <div class="info-cards card-3">
-            <span></span>
-            <div class="description">
-              <p></p>
-              <button></button>
-            </div>
-          </div>
-
-          <div class="info-cards card-4">
-            <span></span>
-            <div class="description">
-              <p></p>
-              <button></button>
-            </div>
-          </div>
-        </div>
-        <div class="main-img"></div>
+      <div class="blog-container">
+        <div class="section-1"></div>
+        <div class="section-2"></div>
+        <div class="section-3"></div>
+        <div class="section-4"></div>
+        <div class="section-5"></div>
+        <div class="section-6"></div>
+        <div class="section-7"></div>
+        <div class="chat-bot"></div>
       </div>
     </section>
-    <div style="display: flex; flex-direction: column">
-      <img src="../public/icons/envelope.svg" alt="" width="100" />
-      <img src="../public/icons/envelope.svg" alt="" width="100" />
-      <img src="../public/icons/envelope.svg" alt="" width="100" />
-      <img src="../public/icons/envelope.svg" alt="" width="100" />
-      <img src="../public/icons/envelope.svg" alt="" width="100" />
-    </div>
-
     <footer class="footer">
       <div class="footer-container">
         <div class="footer-registration">
@@ -129,14 +95,35 @@
       </div>
     </footer>
     <script>
-      function toggleSidebar() {
-        const sidebar = document.querySelector(".sidebar").style;
-        const hamburger = document.querySelector(".hamburger").style;
-        const cross = document.querySelector(".cross").style;
+      const sidebar = document.querySelector(".sidebar").style;
+      const hamburger = document.querySelector(".hamburger").style;
+      const cross = document.querySelector(".cross").style;
+      const menu = document.querySelector(".menu");
+      if (window.innerWidth < 576) {
+        hamburger.display = "block";
+      }
+      window.addEventListener("resize", () => {
+        if (window.innerWidth < 576) {
+          hamburger.display = "block";
+        } else {
+          sidebar.display = "none";
+          hamburger.display = "none";
+          cross.display = "none";
+        }
+      });
 
-        sidebar.display = sidebar.display === "none" ? "flex" : "none";
-        cross.display = cross.display === "none" ? "block" : "none";
-        hamburger.display = cross.display === "none" ? "block" : "none";
+      // menu.addEventListener("click", () => {
+      //   cross.display = hamburger.display === "none" ? "block" : "none";
+      //   sidebar.display = cross.display === "none" ? "flex" : "none";
+      //   hamburger.display = sidebar.display === "none" ? "block" : "none";
+      //   cross.display = hamburger.display === "none" ? "block" : "none";
+      // });
+
+      function toggleSidebar() {
+        cross.display = hamburger.display === "none" ? "block" : "none";
+        sidebar.display = cross.display === "none" ? "flex" : "none";
+        hamburger.display = sidebar.display === "none" ? "block" : "none";
+        cross.display = hamburger.display === "none" ? "block" : "none";
       }
     </script>
   </body>

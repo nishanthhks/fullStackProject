@@ -6,26 +6,25 @@
   box-sizing: border-box;
 }
 :root {
-  --primary: #f8f9fa;
-  --secondary: #ff8b17;
+  --asparagus: #6a994eff;
   --dark-moss-green: #606c38ff;
   --dark-green: #283618ff;
   --cornsilk: #fefae0ff;
   --earth-yellow: #dda15eff;
   --tigers-eye: #bc6c25ff;
-
-  --hunter-green: #386641ff;
-  --asparagus: #6a994eff;
-  --yellow-green: #a7c957ff;
-  --parchment: #f2e8cfff;
+  --secondary: #ff8b17;
   --bittersweet-shimmer: #bc4749ff;
+  --sec-dark-blue: #1b263b;
 }
 body {
+  background: url("../public/images/pattern.svg");
+  background-repeat: no-repeat;
+  background-position: ;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--tigers-eye);
+  background-color: var(--secondary);
 }
 .container {
   width: 400px;
@@ -42,8 +41,6 @@ body {
   position: relative;
   font-size: 25px;
   font-weight: 700;
-  align-self: flex-start;
-  /* background-color: gray; */
 }
 .title::before {
   position: absolute;
@@ -52,7 +49,7 @@ body {
   content: "";
   width: 25px;
   height: 4px;
-  background-color: orange;
+  background-color: var(--secondary);
 }
 
 /* .................................  */
@@ -69,6 +66,7 @@ input[type="text"] {
   font-size: 14px;
   border: none;
   outline: none;
+  background-color: var(--cornsilk);
   border-bottom: 2px solid rgb(175, 175, 175);
 }
 input[type="email"]:focus,
@@ -80,7 +78,6 @@ input[type="text"]:focus {
   position: relative;
   width: 100%;
   margin: 25px 0px;
-  background-color: gray;
 }
 .icon {
   position: absolute;
@@ -108,13 +105,8 @@ input[type="text"]:focus {
   justify-content: space-around;
 }
 .checkBox-item a {
-  color: orange;
+  color: var(--secondary);
 }
-/* .checkBox-item a:hover {
-
-  border-bottom: 1px solid gray;
-  margin-bottom: -1px;
-} */
 
 /* ...............................  */
 
@@ -127,13 +119,12 @@ button {
   font-weight: 500;
   border-radius: 5px;
   color: white;
-  background-color: orange;
-
+  background-color: var(--secondary);
+  box-shadow: 0px 0px 10px -3px rgb(255, 192, 120);
   transition: box-shadow 0.3s ease 0.1s;
 }
 .form-container form button:hover {
   box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 1);
-  /* box-shadow: 0px 0px 10px -2px rgba(255,136,0,1); */
 }
 .register-login-redirect {
   font-size: 13px;
