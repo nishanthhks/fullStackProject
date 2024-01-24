@@ -17,7 +17,7 @@
   --sec-dark-blue: #1b263b;
 }
 body {
-  background: url("../public/images/pattern.svg");
+  /* background: url("../public/images/pattern.svg"); */
   background-repeat: no-repeat;
   background-position: ;
   height: 100vh;

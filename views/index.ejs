@@ -40,7 +40,9 @@
       </nav>
       <nav class="sidebar show">
         <ul>
-          <li class="side-about-us"><a href="#">About us</a></li>
+          <li class="side-about-us">
+            <a href="../views/login.ejs">About us</a>
+          </li>
           <li class="side-donate"><a href="#">Donate</a></li>
           <li class="side-login"><a href="#">Login</a></li>
           <li class="side-register">
@@ -94,6 +96,7 @@
         </div>
       </div>
     </footer>
+    <%- include("D:\extraLearnings\fullStack3rdSemProject\views\login.ejs") %>
     <script>
       const sidebar = document.querySelector(".sidebar").style;
       const hamburger = document.querySelector(".hamburger").style;
@@ -101,6 +104,10 @@
       const menu = document.querySelector(".menu");
       if (window.innerWidth < 576) {
         hamburger.display = "block";
+      } else {
+        sidebar.display = "none";
+        hamburger.display = "none";
+        cross.display = "none";
       }
       window.addEventListener("resize", () => {
         if (window.innerWidth < 576) {
@@ -111,14 +118,6 @@
           cross.display = "none";
         }
       });
-
-      // menu.addEventListener("click", () => {
-      //   cross.display = hamburger.display === "none" ? "block" : "none";
-      //   sidebar.display = cross.display === "none" ? "flex" : "none";
-      //   hamburger.display = sidebar.display === "none" ? "block" : "none";
-      //   cross.display = hamburger.display === "none" ? "block" : "none";
-      // });
-
       function toggleSidebar() {
         cross.display = hamburger.display === "none" ? "block" : "none";
         sidebar.display = cross.display === "none" ? "flex" : "none";

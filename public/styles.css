@@ -62,3 +62,18 @@ body {
   width: 80px;
   border-radius: 40px;
 }
+@media (max-width: 576px) {
+  .blog-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(7, 300px);
+  }
+  .section-1,
+  .section-2,
+  .section-3,
+  .section-4,
+  .section-5,
+  .section-6,
+  .section-7 {
+    grid-column: 1/2;
+  }
+}
