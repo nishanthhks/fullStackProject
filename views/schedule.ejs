@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../public/schedule.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="inner-cointainer personal">
+        <h2 class="personal-information heading">Personal</h2>
+        <div class="fullname-input input-div">
+          <label for="fullname">Full Name</label>
+          <input type="text" name="fullname" id="fullname" />
+        </div>
+        <div class="contact">
+          <div class="email-input input-div">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" />
+          </div>
+          <div class="phonenumber-input input-div">
+            <label for="phonenumber">Phone</label>
+            <input type="text" name="phonenumber" id="phonenumber" />
+          </div>
+        </div>
+        <label for="">Visited previously?</label>
+        <div class="check">
+          <div class="check-input">
+            <input type="radio" name="yes" id="yes" />
+            <label for="yes">yes</label>
+          </div>
+          <div class="check-input">
+            <input type="radio" name="no" id="no" />
+            <label for="no">no</label>
+          </div>
+          <div class="check-input">
+            <input type="radio" name="notsure" id="notsure" />
+            <label for="notsure">not sure</label>
+          </div>
+        </div>
+        <div class="comment-input input-div">
+          <label for="textarea">Comments</label>
+          <textarea name="textarea" id="textarea" cols="30" rows="4"></textarea>
+        </div>
+        <div class="checkBox-input input-div">
+          <input type="checkbox" name="agree" id="agree" />
+          <label for="agree">Agree with us</label>
+        </div>
+        <button type="submit input-div">Confirm</button>
+      </div>
+      <div class="inner-cointainer personal">
+        <h2 class="general-information heading">General</h2>
+        <div class="date-time">
+          <div class="date-input">
+            <label for="date">Date</label>
+            <input type="date" name="date" id="date" />
+          </div>
+          <div class="time-input">
+            <label for="time">Time</label>
+            <input type="time" name="time" id="time" />
+          </div>
+
+          <div class="reason-selection">
+            <label for="reason">Reason for visit</label>
+            <select id="reason" name="reason" required>
+              <option value="">Select Doctor</option>
+              <option value="A">A</option>
+              <option value="B">B</option>
+            </select>
+          </div>
+
+          <div class="doctor-selection">
+            <label for="doctor">Doctor's Name</label>
+            <select id="doctor" name="doctor" required>
+              <option value="">Select Doctor</option>
+              <option value="Dr. Smith - Cardiology">
+                Dr. Smith - Cardiology
+              </option>
+              <option value="Dr. Johnson - Pediatrics">
+                Dr. Johnson - Pediatrics
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

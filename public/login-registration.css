@@ -18,8 +18,8 @@
 }
 body {
   /* background: url("../public/images/pattern.svg"); */
-  background-repeat: no-repeat;
-  background-position: ;
+  /* background-repeat: no-repeat;
+  background-position: ; */
   height: 100vh;
   display: flex;
   justify-content: center;
