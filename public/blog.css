@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+.blog {
+  padding-top: 10px;
+  background-color: white;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  margin: 20px;
+  /* border: 3px solid black;
+  box-shadow: 5px 4px black; */
+}
+.blog-container {
+  display: flex;
+  justify-content: space-between;
+}
+.main-blog {
+  width: 100%;
+  margin-right: 30px;
+  border: 3px solid black;
+  box-shadow: 5px 4px black;
+}
+.navigation-cards {
+  width: 500px;
+}
+.card {
+  margin: 20px 0px;
+  height: 200px;
+  border: 3px solid black;
+  box-shadow: 5px 4px black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+}
+.card .link {
+  width: 100%;
+  background-color: blue;
+  height: 40%;
+  position: relative;
+}
+.card span {
+  background-color: red;
+  width: 20%;
+}
+.card .link button {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}

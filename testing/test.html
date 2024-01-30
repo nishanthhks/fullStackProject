@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Arial", sans-serif;
+      }
+
+      .slider-container {
+        width: 80%;
+        margin: 50px auto;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .slider-wrapper {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .card {
+        min-width: 300px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin: 0 10px;
+      }
+
+      .card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .slider-navigation {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      .dot {
+        width: 15px;
+        height: 15px;
+        background-color: #ddd;
+        border-radius: 50%;
+        margin: 0 5px;
+        cursor: pointer;
+      }
+
+      .dot.active {
+        background-color: #555;
+      }
+
+      .slider-click-area {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 50%;
+        cursor: pointer;
+        z-index: 1;
+      }
+
+      .slider-click-area.left {
+        left: 0;
+      }
+
+      .slider-click-area.right {
+        right: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slider-container">
+      <div
+        class="slider-click-area left"
+        onclick="navigateToPreviousSlide()"></div>
+      <div class="slider-wrapper" id="slider">
+        <div class="card"><img src="image1.jpg" alt="Card 1" /></div>
+        <div class="card"><img src="image2.jpg" alt="Card 2" /></div>
+        <div class="card"><img src="image3.jpg" alt="Card 3" /></div>
+        <!-- Add more card elements as needed -->
+      </div>
+      <div
+        class="slider-click-area right"
+        onclick="navigateToNextSlide()"></div>
+    </div>
+
+    <div class="slider-navigation" id="dots"></div>
+
+    <script>
+      const slider = document.getElementById("slider");
+      const dotsContainer = document.getElementById("dots");
+      const sliderClickAreaLeft = document.querySelector(
+        ".slider-click-area.left"
+      );
+      const sliderClickAreaRight = document.querySelector(
+        ".slider-click-area.right"
+      );
+
+      // Create dots for navigation
+      for (let i = 0; i < slider.children.length; i++) {
+        const dot = document.createElement("div");
+        dot.classList.add("dot");
+        dot.addEventListener("click", () => navigateToSlide(i));
+        dotsContainer.appendChild(dot);
+      }
+
+      const dots = dotsContainer.children;
+
+      function navigateToPreviousSlide() {
+        const currentIndex = getCurrentIndex();
+        if (currentIndex > 0) {
+          navigateToSlide(currentIndex - 1);
+        }
+      }
+
+      function navigateToNextSlide() {
+        const currentIndex = getCurrentIndex();
+        if (currentIndex < slider.children.length - 1) {
+          navigateToSlide(currentIndex + 1);
+        }
+      }
+
+      function getCurrentIndex() {
+        const transformValue = window
+          .getComputedStyle(slider)
+          .getPropertyValue("transform");
+        const matrix = new DOMMatrix(transformValue);
+        return -matrix.m41 / slider.children[0].offsetWidth;
+      }
+
+      function navigateToSlide(slideIndex) {
+        const slideWidth = slider.children[0].offsetWidth;
+        slider.style.transform = `translateX(${-slideIndex * slideWidth}px)`;
+
+        // Update active dot
+        for (let i = 0; i < dots.length; i++) {
+          dots[i].classList.remove("active");
+        }
+        dots[slideIndex].classList.add("active");
+      }
+
+      // Set the first dot as active initially
+      dots[0].classList.add("active");
+    </script>
+  </body>
+</html>

@@ -6,25 +6,40 @@
   box-sizing: border-box;
 }
 :root {
+  --seasalt: #f8f9faff;
+  --antiflash-white: #e9ecefff;
+  --platinum: #dee2e6ff;
+  --french-gray: #ced4daff;
+  --french-gray-2: #adb5bdff;
+  --slate-gray: #6c757dff;
+  --outer-space: #495057ff;
+  --onyx: #343a40ff;
+  --eerie-black: #212529ff;
+
   --asparagus: #6a994eff;
   --dark-moss-green: #606c38ff;
   --dark-green: #283618ff;
   --cornsilk: #fefae0ff;
   --earth-yellow: #dda15eff;
   --tigers-eye: #bc6c25ff;
-  --secondary: #ff8b17;
+  --secondary: #ff7817;
+
   --bittersweet-shimmer: #bc4749ff;
   --sec-dark-blue: #1b263b;
+
+  --light-1: #fff7ee;
+  --light-2: #f6e7d4;
+  --light-3: #fde4c6;
 }
 body {
-  background-color: var(--cornsilk);
+  background-color: white;
 }
-.blog-container {
+
+/* .blog-container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: 300px 200px 600px 180px;
   padding: 20px;
-  /* position: relative; */
 }
 .blog-container > * {
   border: 2px solid black;
@@ -53,7 +68,6 @@ body {
   grid-column: 1/13;
 }
 .chat-bot {
-  /* z-index: 555; */
   position: fixed;
   background-color: #350505;
   bottom: 10px;
@@ -62,7 +76,7 @@ body {
   width: 80px;
   border-radius: 40px;
 }
-@media (max-width: 576px) {
+ @media (max-width: 576px) {
   .blog-container {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(7, 300px);
@@ -76,4 +90,4 @@ body {
   .section-7 {
     grid-column: 1/2;
   }
-}
+} */

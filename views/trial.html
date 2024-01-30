@@ -5,28 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      .container {
+      .card {
         height: 200px;
         max-width: 200px;
-
         border: 2px solid black;
-
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         padding: 20px;
       }
-      .link {
+      .card .link {
         width: 100%;
         background-color: blue;
         height: 40%;
         position: relative;
       }
-      span {
+      .card span {
         background-color: red;
         width: 20%;
       }
-      .link button {
+      .card .link button {
         position: absolute;
         bottom: 20px;
         left: 20px;
@@ -34,11 +32,11 @@
     </style>
   </head>
   <body>
-    <div class="container">
+    <div class="card">
       <span>text</span>
       <div class="link">
         <button>
-          <img src="../public/icons/eye.svg" alt="" />
+          <img src="../public/icons/eye.svg" alt="" height="15" width="15" />
         </button>
       </div>
     </div>
