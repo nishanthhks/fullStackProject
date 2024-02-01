@@ -23,7 +23,6 @@
   --earth-yellow: #dda15eff;
   --tigers-eye: #bc6c25ff;
   --secondary: #ff7817;
-
   --bittersweet-shimmer: #bc4749ff;
   --sec-dark-blue: #1b263b;
 
@@ -31,9 +30,11 @@
   --light-2: #f6e7d4;
   --light-3: #fde4c6;
 }
-body {
-  background-color: white;
+.pattern {
+  height: 100vh;
+  position: fixed;
+  z-index: -1;
+  top: 0px;
+  width: 100%;
   background-image: url(./images/pattern.svg);
-  background-repeat: no-repeat;
-  background-size: cover;
 }

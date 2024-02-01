@@ -23,6 +23,7 @@
   --earth-yellow: #dda15eff;
   --tigers-eye: #bc6c25ff;
   --secondary: #ff7817;
+  --secondary-2: #ff08b5;
   --bittersweet-shimmer: #bc4749ff;
   --sec-dark-blue: #1b263b;
 
@@ -41,8 +42,9 @@ header {
   justify-content: space-between;
   align-items: center;
   border-bottom: 3px solid black;
+  box-shadow: 1px 5px 14px -1px #f6d2b9;
   padding: 35px 20px;
-  background-color: rgba(229, 156, 247, 0.786);
+  background-color: rgba(255, 255, 255, 0.722);
   backdrop-filter: blur(100px);
   height: 50px;
 }
@@ -104,11 +106,9 @@ header {
   background-color: white;
   font-weight: 900;
   padding: 10px 20px;
-  /* border-radius: 50px; */
   transition: all 0.2s ease 0s;
 }
 .login a:hover {
-  /* background-color: #fde9ce; */
   box-shadow: 4px 3px black;
   border: 2px solid black;
 }
@@ -122,7 +122,6 @@ header {
   transition: all 0.2s ease-in 0s;
 }
 .register a:hover {
-  /* color: black; */
   box-shadow: 4px 3px black;
   border: 2px solid black;
 }
@@ -148,8 +147,8 @@ header {
   width: 150px;
   height: 200px;
   padding: 4px;
-  background-color: var(--asparagus);
-  border: 3px solid var(--dark-green);
+  background-color: white;
+  outline: 4px solid var(--secondary);
 }
 
 .sidebar ul {
@@ -176,14 +175,14 @@ header {
   height: 100%;
   border-radius: 4px;
   color: white;
-  background-color: var(--dark-green);
+  background-color: var(--secondary);
   font-weight: 500;
   font-size: 17px;
   font-family: "Poppins", sans-serif;
   transition: all 0.2s ease 0s;
 }
 .sidebar ul li a:hover {
-  background-color: rgba(40, 54, 24, 0.689);
+  background-color: rgb(255, 64, 0);
 }
 
 /*responsive*/
@@ -196,8 +195,8 @@ header {
   }
   /* .hamburger {
     display: block;
-  } */
-  /* .cross {
+  }
+  .cross {
     display: none;
   } */
 }

@@ -3,17 +3,21 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "Oswald", sans-serif;
   box-sizing: border-box;
+}
+:root {
+  --secondary: #ff7817;
 }
 .heading {
   background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 20px;
+  margin: 20px 80px;
   border: 3px solid black;
   box-shadow: 5px 4px black;
+  background-color: rgba(255, 255, 255, 0.722);
+  backdrop-filter: blur(100px);
 }
 .heading-container {
   display: flex;
@@ -39,6 +43,14 @@
   font-size: 15pt;
   color: white;
   padding: 10px 30px;
+}
+.calmpanion {
+  font-weight: 900;
+  font-size: 40pt;
+  background: linear-gradient(to right, #ff7817 0%, #ff08b5 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .heading-image {
   margin-right: 50px;
