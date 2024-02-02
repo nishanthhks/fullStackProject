@@ -6,54 +6,134 @@
     <title>Document</title>
     <link rel="stylesheet" href="../public/header.css" />
     <link rel="stylesheet" href="../public/login-registration.css" />
+    <style>
+      .error-message {
+        color: red;
+        font-size: 12px;
+        margin-top: 5px;
+      }
+    </style>
   </head>
   <body>
-    <div class="container">
-      <div class="form-container">
-        <span class="title">Login </span>
-        <form action="#">
-          <div class="input-field email">
-            <img
-              class="envelope icon"
-              src="../public/icons/envelope.svg"
-              alt=""
-              width="20" />
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Enter your email" />
-          </div>
-          <div class="input-field password">
-            <img
-              class="lock icon"
-              src="../public/icons/lock.svg"
-              alt=""
-              width="20" />
-            <input
-              type="password"
-              name="password"
-              id="password"
-              placeholder="Enter your password" />
-            <img
-              class="crossed-eye"
-              src="../public/icons/crossed-eye.svg"
-              alt=""
-              width="20" />
-          </div>
-          <div class="checkBox-item">
-            <div class="checkBox-content">
-              <input type="checkbox" name="remember" id="remember" />
-              <label for="remember">Remember me</label>
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <a href="./index.html"><img src="../public/icons/websiteLogo.svg" alt="" height="100" /></a>
+          <h2>CALMPANION</h2>
+        </div>
+        <!-- <ul>
+          <li class="about-us"><a href="#"> About us</a></li>
+          <li class="donate"><a href="#">Donate</a></li>
+          <li class="login"><a href="./login.html">Login</a></li>
+          <li class="register">
+            <a href="./registration.html">Register</a>
+          </li>
+        </ul> -->
+        <img
+          class="menu hamburger"
+          src="../public/icons/menu.svg"
+          alt=""
+          width="35"
+          onclick="toggleSidebar()" />
+        <img
+          class="menu cross"
+          src="../public/icons/cross.svg"
+          alt=""
+          width="35"
+          onclick="toggleSidebar()" />
+      </nav>
+      <nav class="sidebar show">
+        <ul>
+          <li class="side-about-us">
+            <a href="../views/login.ejs">About us</a>
+          </li>
+          <li class="side-donate"><a href="#">Donate</a></li>
+          <li class="side-login"><a href="./login.html">Login</a></li>
+          <li class="side-register">
+            <a href="./registration.html">Register</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+   <section class="log-reg">
+      <div class="container">
+        <div class="form-container">
+          <span class="title">Login </span>
+          <form id="loginForm" action="#" onsubmit="return validateForm()">
+            <div class="input-field email">
+              <img
+                class="envelope icon"
+                src="../public/icons/envelope.svg"
+                alt=""
+                width="20" />
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Enter your email" />
+              <div id="emailError" class="error-message"></div>
             </div>
-            <a href="#">Forget password?</a>
-          </div>
-          <button class="button" type="submit">Login now</button>
-          <div class="register-login-redirect">
-            <p>Not a member? <a href="./registration.html">Signup now</a></p>
-          </div>
-        </form>
+            <div class="input-field password">
+              <img
+                class="lock icon"
+                src="../public/icons/lock.svg"
+                alt=""
+                width="20" />
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Enter your password" />
+              <div id="passwordError" class="error-message"></div>
+              <img
+                class="crossed-eye"
+                src="../public/icons/crossed-eye.svg"
+                alt=""
+                width="20" />
+            </div>
+            <div class="checkBox-item">
+              <div class="checkBox-content">
+                <input type="checkbox" name="remember" id="remember" />
+                <label for="remember">Remember me</label>
+              </div>
+              <a href="#">Forget password?</a>
+            </div>
+            <button class="button" type="submit">Login now</button>
+            <div class="register-login-redirect">
+              <p>Not a member? <a href="./registration.html">Signup now</a></p>
+            </div>
+          </form>
+        </div>
       </div>
-    </div>
+   </section class="log-reg">
+
+    <script>
+      function validateForm() {
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+        var emailError = document.getElementById("emailError");
+        var passwordError = document.getElementById("passwordError");
+
+        // Reset error messages
+        emailError.innerHTML = "";
+        passwordError.innerHTML = "";
+
+        var isValid = true;
+
+        // Email validation
+        if (email === "") {
+          emailError.innerHTML = "Email is required";
+          isValid = false;
+        }
+
+        // Password validation
+        if (password === "") {
+          passwordError.innerHTML = "Password is required";
+          isValid = false;
+        }
+
+        return isValid;
+      }
+    </script>
   </body>
 </html>

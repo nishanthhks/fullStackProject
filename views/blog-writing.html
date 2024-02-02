@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../public/styles.css" />
+    <link rel="stylesheet" href="../public/header.css" />
+    <link rel="stylesheet" href="../public/blog-writing.css" />
+  </head>
+  <body>
+    <img src="../public/images/back-pattern.svg" class="pattern" />
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <a href="./index.html"
+            ><img src="../public/icons/websiteLogo.svg" alt="" height="100"
+          /></a>
+          <h2>CALMPANION</h2>
+        </div>
+        <ul>
+          <li class="about-us"><a href="#"> About us</a></li>
+          <li class="donate"><a href="#">Donate</a></li>
+          <li class="login"><a href="./login.html">Login</a></li>
+          <li class="register">
+            <a href="./registration.html">Register</a>
+          </li>
+        </ul>
+        <img
+          class="menu hamburger"
+          src="../public/icons/menu.svg"
+          alt=""
+          width="35"
+          onclick="toggleSidebar()" />
+        <img
+          class="menu cross"
+          src="../public/icons/cross.svg"
+          alt=""
+          width="35"
+          onclick="toggleSidebar()" />
+      </nav>
+      <nav class="sidebar show">
+        <ul>
+          <li class="side-about-us">
+            <a href="../views/login.ejs">About us</a>
+          </li>
+          <li class="side-donate"><a href="#">Donate</a></li>
+          <li class="side-login"><a href="./login.html">Login</a></li>
+          <li class="side-register">
+            <a href="./registration.html">Register</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div class="blog-main">
+      <div class="blog-image"></div>
+      <div class="blog-details">
+        <!-- <a href=""> <img class="save" src="./SVG/save.svg" /></a>
+    <a href=""><img src="./SVG/share.svg" class="share" /></a> -->
+        <p class="blog-heading"></p>
+        <p class="blog-info"></p>
+        <input type="text" class="input-element" />
+      </div>
+      <div class="blog-recent">
+        <p class="blog-recent-title">RECENT BLOGS</p>
+        <div class="one blog-recent-one">
+          <img src="../public/images/writing-blog/DIET.jpg" class="diet" />
+          <p class="date-one">10th December 2019.</p>
+          <p class="caption-one">
+            Scientific relationship between Fod and Health.
+          </p>
+          <img src="../public/icons/save.svg" class="save1" />
+          <img src="../public/icons/share.svg" class="share1" />
+        </div>
+        <div class="one blog-recent-two">
+          <img src="../public/images/writing-blog/meditate.jpeg" class="medi" />
+          <p class="date-two">20th September 2023.</p>
+          <p class="caption-one">Medidation:Key for stress reduction.</p>
+          <img src="../public/icons/save.svg" class="save2" />
+          <img src="../public/icons/share.svg" class="share2" />
+        </div>
+        <div class="one blog-recent-three">
+          <img src="../public/images/writing-blog/social.jpg" class="social" />
+          <p class="date-three">2nd October 2023.</p>
+          <p class="caption-one">Impact of social Media on mental health.</p>
+          <img src="../public/icons/save.svg" class="save3" />
+          <img src="../public/icons/share.svg" class="share3" />
+        </div>
+        <div class="blog-subscribe">
+          <p class="blog-subheading">Subscribe</p>
+          <input
+            type="text"
+            name="email-id"
+            class="blog-email"
+            placeholder="Email-ID"
+            class="subs" />
+          <br />
+          <br />
+          <button class="blog-button">Submit</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

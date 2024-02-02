@@ -5,8 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="../public/schedule.css" />
+    <link rel="stylesheet" href="../public/styles.css" />
+    <link rel="stylesheet" href="../public/header.css" />
   </head>
   <body>
+    <img src="../public/images/back-pattern.svg" class="pattern" />
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <a href="./index.html"
+            ><img src="../public/icons/websiteLogo.svg" alt="" height="100"
+          /></a>
+          <h2>CALMPANION</h2>
+        </div>
+        <ul>
+          <li class="about-us"><a href="#"> About us</a></li>
+          <li class="donate"><a href="#">Donate</a></li>
+          <li class="login"><a href="./login.html">Login</a></li>
+          <li class="register">
+            <a href="./registration.html">Register</a>
+          </li>
+        </ul>
+        <img
+          class="menu hamburger"
+          src="../public/icons/menu.svg"
+          alt=""
+          width="35"
+          onclick="toggleSidebar()" />
+        <img
+          class="menu cross"
+          src="../public/icons/cross.svg"
+          alt=""
+          width="35"
+          onclick="toggleSidebar()" />
+      </nav>
+      <nav class="sidebar show">
+        <ul>
+          <li class="side-about-us">
+            <a href="../views/login.ejs">About us</a>
+          </li>
+          <li class="side-donate"><a href="#">Donate</a></li>
+          <li class="side-login"><a href="./login.html">Login</a></li>
+          <li class="side-register">
+            <a href="./registration.html">Register</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
     <section class="schedule">
       <!--personal information-->
       <div class="container">
@@ -96,9 +141,37 @@
               </option>
             </select>
           </div>
-          <a href="#" class="confirm">Confirm</a>
+          <button href="#" class="confirm">Confirm</button>
         </div>
       </div>
     </section>
+    <script>
+      const sidebar = document.querySelector(".sidebar").style;
+      const hamburger = document.querySelector(".hamburger").style;
+      const cross = document.querySelector(".cross").style;
+      const menu = document.querySelector(".menu");
+      if (window.innerWidth < 576) {
+        hamburger.display = "block";
+      } else {
+        sidebar.display = "none";
+        hamburger.display = "none";
+        cross.display = "none";
+      }
+      window.addEventListener("resize", () => {
+        if (window.innerWidth < 576) {
+          hamburger.display = "block";
+        } else {
+          sidebar.display = "none";
+          hamburger.display = "none";
+          cross.display = "none";
+        }
+      });
+      function toggleSidebar() {
+        cross.display = hamburger.display === "none" ? "block" : "none";
+        sidebar.display = cross.display === "none" ? "flex" : "none";
+        hamburger.display = sidebar.display === "none" ? "block" : "none";
+        cross.display = hamburger.display === "none" ? "block" : "none";
+      }
+    </script>
   </body>
 </html>

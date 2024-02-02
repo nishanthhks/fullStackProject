@@ -5,82 +5,201 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="../public/login-registration.css" />
+    <link rel="stylesheet" href="../public/header.css" />
+    <style>
+      .error-message {
+        color: red;
+        font-size: 12px;
+        margin-top: 5px;
+      }
+    </style>
   </head>
   <body>
-    <div class="container">
-      <div class="form-container">
-        <span class="R-title">Registration </span>
-        <form action="#">
-          <div class="input-field user">
-            <img
-              class="envelope icon"
-              src="../public/icons/user.svg"
-              alt=""
-              width="20" />
-            <input
-              type="text"
-              name="text"
-              id="text"
-              placeholder="Enter your name" />
-          </div>
-          <div class="input-field email">
-            <img
-              class="envelope icon"
-              src="../public/icons/envelope.svg"
-              alt=""
-              width="20" />
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Enter your email" />
-          </div>
-          <div class="input-field password">
-            <img
-              class="lock icon"
-              src="../public/icons/lock.svg"
-              alt=""
-              width="20" />
-            <input
-              type="password"
-              name="password"
-              id="password"
-              placeholder="Enter your password" />
-          </div>
-          <div class="input-field password">
-            <img
-              class="lock icon"
-              src="../public/icons/lock.svg"
-              alt=""
-              width="20" />
-            <input
-              type="password"
-              name="password"
-              id="password"
-              placeholder="Confirm a password" />
-            <img
-              class="crossed-eye"
-              src="../public/icons/crossed-eye.svg"
-              alt=""
-              width="20" />
-          </div>
-          <div class="checkBox-item R-checkBox-item">
-            <div class="checkBox-content R-checkBox-content">
-              <input type="checkbox" name="terms" id="terms" />
-              <label for="terms">I accept all terms & conditions</label>
-            </div>
-          </div>
+    <header>
+      <nav class="navbar">
+        <div class="logo">
           <a href="./index.html"
-            ><button type="submit" class="button">Registration</button></a
-          >
-          <div class="register-login-redirect">
-            <p>
-              Already have an account?
-              <a href="./login.html">login now</a>
-            </p>
-          </div>
-        </form>
+            ><img src="../public/icons/websiteLogo.svg" alt="" height="100"
+          /></a>
+          <h2>CALMPANION</h2>
+        </div>
+        <!-- <ul>
+          <li class="about-us"><a href="#"> About us</a></li>
+          <li class="donate"><a href="#">Donate</a></li>
+          <li class="login"><a href="./login.html">Login</a></li>
+          <li class="register">
+            <a href="./registration.html">Register</a>
+          </li>
+        </ul> -->
+        <img
+          class="menu hamburger"
+          src="../public/icons/menu.svg"
+          alt=""
+          width="35"
+          onclick="toggleSidebar()" />
+        <img
+          class="menu cross"
+          src="../public/icons/cross.svg"
+          alt=""
+          width="35"
+          onclick="toggleSidebar()" />
+      </nav>
+      <nav class="sidebar show">
+        <ul>
+          <li class="side-about-us">
+            <a href="../views/login.ejs">About us</a>
+          </li>
+          <li class="side-donate"><a href="#">Donate</a></li>
+          <li class="side-login"><a href="./login.html">Login</a></li>
+          <li class="side-register">
+            <a href="./registration.html">Register</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <section class="log-reg">
+      <div class="container">
+        <div class="form-container">
+          <span class="R-title">Registration </span>
+          <form
+            id="registrationForm"
+            action="#"
+            onsubmit="return validateForm()">
+            <div class="input-field user">
+              <img
+                class="envelope icon"
+                src="../public/icons/user.svg"
+                alt=""
+                width="20" />
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Enter your name" />
+              <div id="nameError" class="error-message"></div>
+            </div>
+            <div class="input-field email">
+              <img
+                class="envelope icon"
+                src="../public/icons/envelope.svg"
+                alt=""
+                width="20" />
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Enter your email" />
+              <div id="emailError" class="error-message"></div>
+            </div>
+            <div class="input-field password">
+              <img
+                class="lock icon"
+                src="../public/icons/lock.svg"
+                alt=""
+                width="20" />
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Enter your password" />
+              <div id="passwordError" class="error-message"></div>
+            </div>
+            <div class="input-field password">
+              <img
+                class="lock icon"
+                src="../public/icons/lock.svg"
+                alt=""
+                width="20" />
+              <input
+                type="password"
+                name="ConfirmPassword"
+                id="ConfirmPassword"
+                placeholder="Confirm a password" />
+              <div id="confirmPasswordError" class="error-message"></div>
+              <img
+                class="crossed-eye"
+                src="../public/icons/crossed-eye.svg"
+                alt=""
+                width="20" />
+            </div>
+            <div class="checkBox-item R-checkBox-item">
+              <div class="checkBox-content R-checkBox-content">
+                <input type="checkbox" name="terms" id="terms" />
+                <label for="terms">I accept all terms & conditions</label>
+              </div>
+            </div>
+            <div id="termsError" class="error-message"></div>
+            <button class="button" type="submit">Registration</button>
+            <div class="register-login-redirect">
+              <p>
+                Already have an account?
+                <a href="./login.html">login now</a>
+              </p>
+            </div>
+          </form>
+        </div>
       </div>
-    </div>
+    </section>
+
+    <script>
+      function validateForm() {
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById("ConfirmPassword").value;
+        var terms = document.getElementById("terms").checked;
+        var nameError = document.getElementById("nameError");
+        var emailError = document.getElementById("emailError");
+        var passwordError = document.getElementById("passwordError");
+        var confirmPasswordError = document.getElementById(
+          "confirmPasswordError"
+        );
+        var termsError = document.getElementById("termsError");
+
+        // Reset error messages
+        nameError.innerHTML = "";
+        emailError.innerHTML = "";
+        passwordError.innerHTML = "";
+        confirmPasswordError.innerHTML = "";
+        termsError.innerHTML = "";
+
+        var isValid = true;
+
+        // Name validation
+        if (name === "") {
+          nameError.innerHTML = "Name is required";
+          isValid = false;
+        }
+
+        // Email validation
+        if (email === "") {
+          emailError.innerHTML = "Email is required";
+          isValid = false;
+        }
+
+        // Password validation
+        if (password === "") {
+          passwordError.innerHTML = "Password is required";
+          isValid = false;
+        }
+
+        // Confirm Password validation
+        if (confirmPassword === "") {
+          confirmPasswordError.innerHTML = "Confirm Password is required";
+          isValid = false;
+        } else if (password !== confirmPassword) {
+          confirmPasswordError.innerHTML = "Passwords do not match";
+          isValid = false;
+        }
+
+        // Terms validation
+        if (!terms) {
+          termsError.innerHTML = "You must accept the T&C";
+          isValid = false;
+        }
+
+        return isValid;
+      }
+    </script>
   </body>
 </html>

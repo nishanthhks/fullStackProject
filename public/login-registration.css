@@ -16,10 +16,9 @@
   --bittersweet-shimmer: #bc4749ff;
   --sec-dark-blue: #1b263b;
 }
-body {
-  /* background: url("../public/images/pattern.svg"); */
-  /* background-repeat: no-repeat;
-  background-position: ; */
+.log-reg {
+  background: url("../public//images/pattern.svg");
+  background-repeat: no-repeat;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -27,15 +26,15 @@ body {
   background-color: var(--secondary);
 }
 .container {
-  width: 400px;
+  width: 500px;
   padding: 20px;
 }
 .form-container {
   width: 100%;
   padding: 25px;
   border-radius: 10px;
-  background-color: var(--cornsilk);
-  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 1);
+  background-color: white;
+  box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
 }
 .title {
   position: relative;
@@ -66,13 +65,13 @@ input[type="text"] {
   font-size: 14px;
   border: none;
   outline: none;
-  background-color: var(--cornsilk);
+  background-color: white;
   border-bottom: 2px solid rgb(175, 175, 175);
 }
 input[type="email"]:focus,
 input[type="password"]:focus,
 input[type="text"]:focus {
-  border-bottom: 2px solid orange;
+  border-bottom: 2px solid var(--secondary);
 }
 .input-field {
   position: relative;
@@ -150,7 +149,7 @@ input[type="text"]:focus {
   content: "";
   width: 30px;
   height: 4px;
-  background-color: orange;
+  background-color: var(--secondary);
 }
 
 .R-checkBox-item {
