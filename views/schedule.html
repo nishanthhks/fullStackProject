@@ -54,8 +54,8 @@
     </header>
     <section class="schedule">
       <!--personal information-->
-      <div class="container">
-        <div class="inner-cointainer personal">
+      <form class="container" id="schedule">
+        <div class="inner-cointainer personal" >
           <h2 class="personal-information heading">Personal</h2>
           <div class="fullname-input input-div">
             <label for="fullname">Full Name</label>
@@ -141,10 +141,11 @@
               </option>
             </select>
           </div>
-          <button href="#" class="confirm">Confirm</button>
+          <input type="submit" href="#" class="confirm" id="sub"></i>
         </div>
-      </div>
+      </form>
     </section>
+    <script src="../schedule.js"></script>
     <script>
       const sidebar = document.querySelector(".sidebar").style;
       const hamburger = document.querySelector(".hamburger").style;

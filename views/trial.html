@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      .card {
+      /* .card {
         height: 200px;
         max-width: 200px;
         border: 2px solid black;
@@ -28,17 +28,50 @@
         position: absolute;
         bottom: 20px;
         left: 20px;
+      } */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .blog-container {
+        height: 100vh;
+        display: flex;
+        justify-content: space-evenly;
+        margin: 20px 100px;
+        border: 1px solid black;
+      }
+      .blog {
+        border: 1px solid black;
+        width: 70%;
+        margin: 20px;
+      }
+      .card {
+        border: 1px solid black;
+        width: 30%;
       }
     </style>
   </head>
   <body>
-    <div class="card">
+    <!-- <div class="card">
       <span>text</span>
       <div class="link">
         <button>
           <img src="../public/icons/eye.svg" alt="" height="15" width="15" />
         </button>
       </div>
-    </div>
+    </div> -->
+    <section class="blog-container">
+      <div class="blog">
+        <div class="writter">
+          <img src="" alt="" />
+        </div>
+      </div>
+      <div class="card">
+        <div class="one"></div>
+        <div class="one"></div>
+        <div class="one"></div>
+      </div>
+    </section>
   </body>
 </html>
