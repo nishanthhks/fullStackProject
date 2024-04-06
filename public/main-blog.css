@@ -23,6 +23,7 @@
   border: 3px solid black;
   box-shadow: 5px 4px black;
   background-color: #fff;
+  overflow: auto;
 }
 .navigation-cards {
   width: 70%;
