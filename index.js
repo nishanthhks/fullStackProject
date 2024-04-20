@@ -46,8 +46,6 @@ function main(mailData) {
       pass: "gqti uabu kpkz lfmg",
     },
   });
-  //navneeth.cs22@bmsce.ac.in
-  //nithinkoushik0616@gmail.com
   var mailOptions = {
     from: "nishanth.kkps@gmail.com",
     to: data.email,
